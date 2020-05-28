@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+body {
+    background-image: url("images/93141.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+h1{
+  text-align: center;
+}
+.containerq{
+width: "100%";
+ height: "650px";
+}
+@media screen and (max-width:768px){
+.containerq{
+  height: 800px;
+}
+#h11 h1{
+  font-size: large;
+}
+}

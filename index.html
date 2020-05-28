@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="styles.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no"> 
+<title>Mediline Diagnostics Home Page</title>
+<style> 
+  /* Demo Styles */
+#content {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  width: 80%;
+  max-width: 978px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+/* The Loader */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  overflow: hidden;
+}
+.no-js #loader-wrapper {
+  display: none;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #16a085;
+  -webkit-animation: spin 1.7s linear infinite;
+          animation: spin 1.7s linear infinite;
+  z-index: 11;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: purple;
+  -webkit-animation: spin-reverse .6s linear infinite;
+          animation: spin-reverse .6s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: gray;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background:black;
+  z-index: 10;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded styles */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
+}
+</style>
+<style>
+  .zoom {
+    padding: 20px;
+    background-color: whitesmoke;
+    transition: transform .5s; /* Animation */
+    width: 700px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    opacity: 0.5;
+  }
+  @media screen and (max-width:768px){
+    .zoom{
+      height: 50px;
+      width: 300px;
+    }
+  }
+  .zoom:hover {
+    transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  </style> 
+  <style>
+    #{
+        display: none;
+    }
+</style>
+</head>
+<body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    
+  </div>
+  <div id="conti">
+     
+<header>
+    <div class="jumbotron">
+       <div class="container">
+          <div class="row align-items-center">
+             <div class="mainText">
+    <center>
+        <h1 class="hi">Mediline Diagnostics</h1>
+    </center>
+             </div>
+          </div>
+       </div>
+    </div>
+    
+</header>
+<div class="contain">
+    <div class="row">
+       <div class="col-sm-10 offset-sm-1">
+          <nav class="navbar navbar-light navbar-expand-sm fixed-static-top">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                  <b><span class="navbar-toggler-icon"></span> Options</b>
+              </button>
+              <div class="containyo">
+                  <div class="collapse navbar-collapse" id="Navbar">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home"></span> HOME</a></li>
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" style="z-index: 100;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list"></span> PRODUCTS</a></li>
+                        </button>
+                        <div class="dropdown-menu bg-info" id="yo" style="z-index: 10000; position:absolute;" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Kits</h4></a>
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Equipments</h4></a>
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Rapid test</h4></a>
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Analytical Chemicals</h4></a>
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Plastic-wares And Consumables</h4></a>
+                            <a class="dropdown-item" href="#" data-toggle="tooltip" data-html="true" title="For more information go to particular associates" data-placement="bottom"><h4>Surgical Accesories</h4></a>
+                        </div>
+                       </div>  
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-location-arrow"></span> DISTRIBUTION</a></li>
+                        </button>
+                    <div class="dropdown-menu bg-info" id="yo" aria-labelledby="dropdownMenuButton"  style="z-index: 50; position: absolute;">
+                        <a class="dropdown-item" href="#"><h4>Corporate Labs</h4></a>
+                        <a class="dropdown-item" href="#"><h4>Hospital based Blood Banks</h4></a>
+                        <a class="dropdown-item" href="#"><h4>Hospital Based Labs</h4></a>
+                        <a class="dropdown-item" href="#"><h4>Private And Government Medical Institutes</h4></a>
+                        <a class="dropdown-item" href="#"><h4>Private Blood Banks</h4></a>
+                        <a class="dropdown-item" href="#"><h4>Private Labs</h4></a>
+                    </div>
+                   </div>  
+                      <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-chevron-circle-right"></span> ASSOCIATES</a></li>
+                            </button>
+                            <div class="dropdown-menu bg-info" id="yo" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="AD.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Agappe Diagnostics Limited</h4></a>
+                                <a class="dropdown-item" href="Av.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Avantor Performance Materials India Limited</h4></a>
+                                <a class="dropdown-item" href="bd.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Biolab Diagnostics Private Limited</h4></a>
+                                <a class="dropdown-item" href="labline.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Labline Equipments Private Limited</h4></a>
+                                <a class="dropdown-item" href="peer.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Peerless Biotech Private Limited</h4></a>
+                                <a class="dropdown-item" href="pre.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Precision Biotech</h4></a>
+                                <a class="dropdown-item" href="RD.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Reckon Diagnostics Private Limited</h4></a>
+                                <a class="dropdown-item" href="sp.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Sejal Plastics</h4></a>
+                                <a class="dropdown-item" href="sd.html"data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Suyog Diagnostics Private Limited</h4></a>
+                                <a class="dropdown-item" href="wb.html" data-toggle="tooltip" data-html="true" title="Tap for products information" data-placement="bottom"><h4>Weldon Biotech Private Limited</h4></a>
+                            </div>
+                          </div>
+                      <li class="nav-item"><a class="nav-link" href="Aboutus.html"><span class="fa fa-info"></span> ABOUT US</a></li>
+                      <li class="nav-item"><a class="nav-link" href="contact.html"><span class="fa fa-address-card"></span> CONTACT</a></li>
+                      <li class="nav-item"><a class="nav-link" href="News.html"><span class="fa fa-newspaper"></span> NEWS</a></li>
+                  </ul>
+                </div>
+              </div>
+          </nav>  
+       </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="rowh">
+<div class="row">
+  <div class="col-12 col-md-5">
+<div class="yohi">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="12"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="13"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="14"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="15"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/download.jpg">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/covid.jpg">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/brushless_centrifuge_large.jpg">
+            <h4 style="text-align: center;  color: white" >BRUSHLESS DIGITAL CENTRIFUGE</h4>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/small_centifuge_large.jpg">
+            <h4 style="text-align: center;  color: white" >BRUSHLESS CENTRIFUGE</h4>
+          </div>
+          <div class="carousel-item">
+              <br>
+            <img class="d-block w-100" src="images/pl3_large.jpg">
+            <h4 style="text-align: center;  color: white" >BLOOD MIXER</h4>
+            <h6 style="text-align: center;  color: white">(BM-11)</h6>
+          </div>
+          <div class="carousel-item">
+                <img class="d-block w-100" src="images/Roller-20MC.png">
+                <h4 style="text-align: center;  color: white" >AUTOMATED ESR ANALYZER</h4>
+                <h6 style="text-align: center;  color: white">(ROLLER 20 MC)</h6>
+              </div>
+         <div class="carousel-item">
+                    <img class="d-block w-100" src="images/Roller-20LC.png">
+                    <h4 style="text-align: center;  color: white" >FULLY AUTOMATED ESR ANALYZER</h4>
+                    <h6 style="text-align: center;  color: white">(ROLLER 20 LC)</h6> 
+         </div>
+         <div class="carousel-item">
+                <img class="d-block w-100" src="images/product2.png">
+                <h4 style="text-align: center;  color: white" >i-CHROMA II Reader </h4> 
+     </div>
+     <div class="carousel-item">
+            <img class="d-block w-100" src="images/mispa-i2-148377_1mg.jpg">
+            <h4 style="text-align: center;  color: white" >SPECIFIC PROTEIN ANALYZER MISPA i 2</h4>
+     </div>
+          <div class="carousel-item">
+                <img class="d-block w-100" src="images/67523-9010955.jpg">
+                <h4 style="text-align: center;  color: white" >SPECIFIC PROTEIN ANALYZER MISPA i 3</h4> 
+     </div>
+     <div class="carousel-item">
+            <img class="d-block w-100" src="images/mispa-vivasemi-automatic-biochemistry-analyseragappe-500x500.jpg">
+            <h4 style="text-align: center;  color: white" >BIOCHEMISTRY ANALYZER</h4>
+            <h5 style="text-align: center;  color: white">MISPA VIVA</h5> 
+ </div>
+ <div class="carousel-item">
+        <img class="d-block w-100" src="images/biopath-diagnostics-kharghar-navi-mumbai-diagnostic-centres-bh1y2ownjp.jpg">
+        <h4 style="text-align: center;  color: white" >HEMATOLOGY ANALYZER</h4>
+        <h6 style="text-align: center;  color: white">BC-3000 Plus</h6> 
+</div>
+<div class="carousel-item">
+  <br>
+  <img class="d-block w-100" src="images/diagnostic-instruments-500x500.png">
+  <h4 style="text-align: center;  color: white" >BIOCHEMISTRY ANALYZER</h4>
+  <h4 style="text-align: center;  color: white">RD-50</h4>
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="images/getein-1100-hba1c-analyzer-500x500.jpg">
+  <h4 style="text-align: center;  color: white" >IMMUNOFLUORESCENCE ANALYZER</h4>
+  <h6 style="text-align: center;  color: white">GETEIN 1100</h6> 
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="images/2-500x500.jpg">
+  <h4 style="text-align: center;  color: white" >HEMATOLOGY ANALYZER</h4>
+  <h6 style="text-align: center;  color: white">H-31(SINGLE CHAMBER)</h6> 
+</div>
+<div class="carousel-item"> 
+  <img class="d-block w-100" src="images/electrolyte-analyser-acculyte-3p-amp-5p-500x500.jpg">
+  <h5 style="text-align: center;  color: white" >ACCULYTE ELECTROLYTE ANALYZER</h5> 
+</div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</div>
+<div class="col-12 col-md-6">
+  <br>
+  <br>
+  <div class="zoom">
+    <strong>News Update</strong>
+  </div>
+  <br>
+  <div class="zoom">
+    <strong>Update</strong>
+  </div>
+  <br>
+  <div class="zoom">
+  <strong>Update</strong>
+  </div>
+</div>
+</div>
+</div>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<br>
+<div class="row">
+<div class="col-5 col-md-3">
+<div class="mid">
+  <div id="carouselExampleIndicate" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicate" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicate" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicate" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicate" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicate" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicate" data-slide-to="5"></li>      
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="images/960x0.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/latex-sterile-surgical-gloves-563.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/bionova-sanitizer-3568915734.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/kks49krnxbd7geryhy7m.jfif">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/coverall-protective-wear-covid-19-medical-suit-disposable-suits-phoenix-quality-verified-medical-supply-import-supplier-ppe-usa-canada-fda-approved-suits-corona-virus.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/B1175099506.jpg">
+      </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicate" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicate" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+</div>
+</div>
+<br>
+</div>
+<div class="col-5 col-md-3" id="midin" style="background-color:slategray; opacity: 0.8;  border-radius: 1rem;border:solid 5px black;"><h3 style="color: black; "><strong>Surgical Products:</strong>
+<span class="badge badge-pill badge-info" style="color: black; background-color: cornflowerblue;">New</span>
+</h3>
+<ol>
+  <b><li>Masks</li></b>
+  <b><li>Gloves</li></b>
+  <b><li>Sanitizer</li></b>
+  <b><li>Face Shield</li></b>
+  <b><li>PPE Kits</li></b>
+  <b><li>IR Gun</li></b>
+</ol>
+</div>
+<div class="col-5 col-md-3">
+  <div class="mid">
+  <div id="carouselExampleIndicator" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicator" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="5"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="6"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="7"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="8"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="9"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="10"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="11"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="12"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="13"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="14"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="15"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="16"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="17"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="18"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="19"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="20"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="21"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="22"></li>
+      <li data-target="#carouselExampleIndicator" data-slide-to="23"></li>    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="images/Rinse-3p.jpg">
+        <h6 style="color:white; text-align: center;">RINSE 20L</h6>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/CF-LYSE-Mindray-3P.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/Rinse-3p.jpg">
+        <h6 style="color:white; text-align: center;">DILUENT 20L</h6>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131343.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131421.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131517.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131533.jpg">
+      </div>
+      <div class="carousel-item">
+        <br>
+        <img class="d-block w-100" src="images/IMG_20200511_131601.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131643.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131724 (1).jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131741.jpg">
+      </div>
+      <div class="carousel-item">
+        <br>
+        <img class="d-block w-100" src="images/IMG_20200511_131811.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_131957.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132020.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132041.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132052.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132059.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132151.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200511_132157.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200513_151008.jpg">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/IMG_20200513_151019.jpg">
+      </div>
+      <div class="carousel-item">
+        <br>
+        <img class="d-block w-100" src="images/IMG_20200513_151035.jpg">
+      </div>
+</div>    
+<a class="carousel-control-prev" href="#carouselExampleIndicator" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true" style="outline: black; color: black;"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicator" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+</div> 
+<br>
+</div>
+<div class="col-5 col-md-3" id="midin" style="background-color:slategray; opacity: 0.8; border-radius: 1rem; border:solid 5px black;"><h3 style="color: black;"><strong>Reagents and Kits:</strong></h3>
+  <ol style="font-size:x-large;">
+    <b><li>Hematology Reagents</li></b>
+    <b><li>Analytical Reagents</li></b>
+    <b><li>Biochemistry kits</li></b>
+    <b><li>Serology kits</li></b>
+    <b><li>Elisa kits</li></b>
+    <b><li>Immunofluorescence kits</li></b>
+  </ol>
+</div>
+</div>
+ <br>
+ <br>
+<footer>
+    <div class="footcontain">
+        <br>
+        <div class="row">
+            <div class="col-9 offset-2 col-sm-3">
+                <div class="foot">
+                    <h4 style="color: rgb(245, 233, 233)">CONTACT US</h4>
+                    <h6 style="color: seagreen"><i class="fa fa-building fa-lg"></i> Office address:</h6>
+                    212, Indore trade centre, opposite shyam scooter, near madhumilan cinema, 3/2, south tukoganj Indore(M.P.)-452001<br>
+                    <br>
+                    <h6 style="color: seagreen"><i class="fa fa-phone fa-lg"></i> Call-us:</h6>
+                    Office: 0731-4044787,4214333<br>
+                    Cell: 09827247791 
+                    <br>
+                    <br>
+                    <h6 style="color: seagreen"><i class="fa fa-envelope fa-lg"></i> Mail-us:</h6>
+                    <a href="mailto:mediline_diagnostics@yahoo.co.in">mediline_diagnostics@yahoo.co.in</a>
+                    <a href="mailto:medilinediagnostics7@gmail.com">medilinediagnostics7@gmail.com</a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-9 offset-2 col-sm-3">
+              <h4 style="color: rgb(245, 233, 233)">LOCATION</h4>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+    </div>
+    <div class="row">
+            <div class="col-12 col-sm-12">
+               <div class="devo">Developer: Jatin Karla</div>
+            </div>
+         </div>
+</footer>
+</div>
+<script src='https://codepen.io/_fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
+</body>
+</html>

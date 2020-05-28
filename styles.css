@@ -1,0 +1,335 @@
+
+@charset "ISO-8859-1";
+  body {
+  background-image: url("images/11VIRUS-QNATEST-superJumbo.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.jumbotron
+{
+  background-color: aquamarine;
+  opacity:0.6;
+  height: 100px;
+  margin-top: -10px;
+  width: 100vw;
+}
+.mainText{
+  background-color: rgb(10, 10, 10);
+  width: 480px;
+  height: 70px;
+  margin: -35px auto;
+  border: solid 2px gray ;
+}
+.hi {
+  color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.contain{
+  margin: -32px 0px;
+  background-color: slategray;
+  height: 60px;
+  opacity: 1;
+  width: 100vw;
+}
+ .btn{
+   background-color: slategray;
+   
+ } 
+  nav li {
+     display: inline-block;
+     padding: 5px 15px;
+  }
+  .dropdown{
+    height: 50px;
+    margin-top:-7px;
+  }
+  #yo{
+    background-color: rgb(10, 10, 10);
+  }
+  .dropdown-item{
+
+  }
+  .navbar-nav > li > .dropdown-menu { background-color: #FF0000; }
+    nav a {
+    margin: -10px;
+    font-weight: bold;
+    padding: 0px 0px;
+    font-size: 135%;
+  }
+.navbar-light{
+  background:  slategray;
+  
+}
+.footcontain{
+  background-color: black;
+  height: 370px;
+  width: 100vw;
+}
+.footcontact{
+  background-color: black;
+  height: 500px;
+  margin: -15px 0px 0px 0px;
+  width: 100vw;
+}
+.foot{
+  color:rgb(245, 233, 233);
+  margin-top:0px;
+}
+.devo{
+  background-color: aquamarine;
+  color: black;
+  opacity: 0.7;
+  margin-top: 17px;
+  margin-bottom: 5px;
+  width: 100vw;
+}
+.cont{
+  margin: 30px 0px 0px 0px;
+  opacity: 0.6;
+  z-index: 0;
+}
+.yohi{
+  height: 400px;
+  width: 400px;
+  margin: 25px 0px 0px 30px;
+  border: solid 6px black;
+  background: black;
+}
+.tabfun{
+  background-color: whitesmoke;
+  height: 860px;
+  margin-top:-40px;
+  width: 100vw;
+}
+.tab-content{
+  border-left:2px solid #ddd;
+  border-right:2px solid #ddd;
+  border-bottom:2px solid #ddd;
+  padding:10px;
+  margin-left: 30px;
+  margin-right: 150px;
+}
+.mid{
+  height: 300px;
+  width: 300px;
+  margin: 0px 0px 0px 30px;
+  border: solid 10px black;
+  border-radius: 1rem;
+  background-color: black;
+}
+.news1{
+  background-color: rgba(250, 248, 248, 0.986);
+  opacity: 0.6;
+  height: 160px;
+  padding: 20px;
+}
+.container1{
+  margin: auto;
+  width: 1350px;
+}
+#midin{
+  height: 270px;
+  margin-top: 15px;
+}
+#midin li{
+  font-size: x-large;
+}
+#tabb{
+  margin-top: 10px; 
+  margin-left: 30px;
+  margin-top: 25px; 
+  margin-right: 150px;
+}
+#h33{
+  color: black;
+  margin-left: 40px; 
+  margin-top: 20px;
+}
+#abt1{
+  background-color: black;
+  height: 400px;
+  width: 400px;
+}
+#abt2{
+  background-color: lightsteelblue;
+  height: 400px;
+  width: 400px;
+  margin-left: 20px;
+}
+#carouselExampleIndi{
+  height: 380px;
+  width: 625px;
+  padding: 10px;
+}
+@media screen and (max-width:768px)
+{
+  #abt1{
+    background-color: black;
+    height: 180px;
+    wi
+  }
+  #abt2{
+    background-color: lightsteelblue;
+    height: 180px;
+    width: 280px;
+    margin-left: 33px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #carouselExampleIndi{
+    height: 173px;
+    width: 306px;
+    padding: 1px;
+  }
+  body{
+    background-image: url("2c4a51890366e789fb90f22239dbc664--windows-phone-hd-wallpaper.jpg");
+    background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+  .yohi{
+    height: 282px;
+    width: 282px;
+    margin: 5px auto;
+    border: solid 1px black;
+    font-size: 5px;
+  }
+  .yoh{
+    margin-top: 0px;
+    background-color :rgb(174, 247, 247);
+    width: 100vw;
+    height: 80px;
+  }
+  .mid{
+    height: 130px;
+    width: 130px;
+    margin: 40x 0px 0px 5px;
+    border: solid 1px black;
+  }
+  .mid h6{
+    font-size: 10px;
+  }
+  #midin{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    height: 140px;
+    width: 130px;
+    margin-top: -5px;
+  }
+  #midin ol{
+    margin-left: -12px;
+  }
+  #midin li{
+    font-size: 9px;
+  }
+  #midin h3{
+    font-size: 11px;
+  }
+  .jumbotron{
+    height: 50px;
+  }
+  .mainText{
+    background-color: rgb(10, 10, 10);
+    width: 180px;
+    height: 40px;
+    margin: -15px auto;
+    opacity: 0.8;
+  }
+  .hi {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  .contain{
+    height: 45px;
+    
+  }
+  .navbar{
+    z-index: 50;
+  }
+  .footcontain{
+    height: 700px;
+    margin-top: 0px;
+  }
+  .foot{
+    margin:0px 0px 0px 0px;
+  }
+  .devo{
+    margin:10px 0px;
+    text-align: center;
+  }
+  .cont{
+    margin: 41px 0px 0px 0px;
+  }
+  .containyo{
+    
+  }
+ .yohi h4{
+   font-size: 15px;
+ }
+ .yohi h5{
+   font-size: 12px;
+ } 
+ .yohi h6{
+   font-size: 10px;
+ }
+ .btn{
+   margin-left: -15px;
+   z-index: 10;
+  }
+ #yo{
+   height: 200px;
+   width: 220px;
+   z-index: 1000;
+ }
+ #yo h4{
+   font-size: 10px;
+ }
+ #fo{
+  margin-top: 100px;
+}
+.tab-content{
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
+  border-top:2px solid black;
+  padding:3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width:120px;
+}
+.media-body{
+  width: 280px;
+  border: 2px solid black;
+}
+.media-body h6{
+  font-size: 13px;
+}
+#tabb{
+  display: inline;
+  border: black;
+}
+#h33{
+  font-size: 27px;
+  margin-left: 2px;
+  margin-top: 0px;
+}
+.news1{
+  background-color: rgba(250, 248, 248, 0.986);
+  opacity: 0.7;
+  height: 100px;
+  width: 330px;
+  padding: 7px;
+  margin: 10px auto;
+}
+.news1 h4{
+  font-size: 15px;
+}
+.container1{
+  width: 340px;
+}
+}
