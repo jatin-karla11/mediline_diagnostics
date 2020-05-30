@@ -196,7 +196,7 @@
   }
   body{
     background-image: url("2c4a51890366e789fb90f22239dbc664--windows-phone-hd-wallpaper.jpg");
-    background-size: 100vw 100vh;
+    background-size: 100vw 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   }
@@ -216,7 +216,7 @@
   .mid{
     height: 130px;
     width: 130px;
-    margin: 40x 0px 0px 5px;
+    margin: 0x 0px 0px 5px;
     border: solid 1px black;
   }
   .mid h6{
