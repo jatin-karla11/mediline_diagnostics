@@ -14,7 +14,7 @@
 
 .item {
   background-color: #1EAAFC;
-  
+  height: 100px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   color: #fff;
   border-radius: 4px;
@@ -23,6 +23,42 @@
 .item.item1 {
   
   background-image: url("images/agappe.jpg");
+}
+.item.item2 {
+  
+  background-image: url("images/avantor.jpg");
+}
+.item.item3 {
+  
+  background-image: url("images/biolab.jpg");
+}
+.item.item4 {
+  
+  background-image: url("images/labline.png");
+}
+.item.item5 {
+  
+  background-image: url("images/peerless.jpg");
+}
+.item.item6 {
+  
+  background-image: url("images/precision.jpg");
+}
+.item.item7 {
+  
+  background-image: url("images/reckon.png");
+}
+.item.item8 {
+  
+  background-image: url("images/sp.jpg");
+}
+.item.item9 {
+  
+  background-image: url("images/sd.jpg");
+}
+.item.item10 {
+  
+  background-image: url("images/wb.png");
 }
 @media screen and (max-width:768px) and (orientation:portrait)
 {
@@ -38,8 +74,47 @@
   #g{
     font-size: small;
   }
+  .item{
+    height: 80px;
+  }
   .item.item1 {
   
     background-image: url("images/agappem.jpg");
+  }
+  .item.item2 {
+  
+    background-image: url("images/avantorm.jpg");
+  }
+  .item.item3 {
+  
+    background-image: url("images/biolabm.jpg");
+  }
+  .item.item4 {
+  
+    background-image: url("images/lablinem.png");
+  }
+  .item.item5 {
+  
+    background-image: url("images/peerlessm.jpg");
+  }
+  .item.item6 {
+  
+    background-image: url("images/precisionm.jpg");
+  }
+  .item.item7 {
+  
+    background-image: url("images/reckonm.png");
+  }
+  .item.item8 {
+  
+    background-image: url("images/spm.jpg");
+  }
+  .item.item9 {
+  
+    background-image: url("images/sdm.jpg");
+  }
+  .item.item10 {
+  
+    background-image: url("images/wbm.png");
   }
 }
