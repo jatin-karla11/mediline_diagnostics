@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myTable{
+            border: 5px solid black;
+            
+            width: 100%;
+            
+        }
+        #myTable tr.header,#myTable tr:hover    {
+            background-color: teal;
+        }
+        #myInput{
+            width: 100%;
+            height: 50px;
+        }
+        table, th, td {
+            border: 1px solid whitesmoke;
+            height: 50px;
+         }
+         th{
+             height: 60px;
+         }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="btn-group" role="group">
+        <a role="button" class="btn btn-danger" href="../index.html"  style="margin-top: 2px; margin-left: 2px;"><i class="fa fa-home"></i> Home</a>
+    </div>
+    <h2 style="text-align: center; text-transform: uppercase; color: teal;">EQUIPMENTS</h2>
+    <input type="text" id="myInput" placeholder="Enter Machine name" onkeyup="searchFun()">
+    <marquee width="100%" direction="right" height="20px">
+        Here is a short important list of equipments..For more information tap particular associates!
+    </marquee>
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:25%;">Equipments</th>
+            <th style="width:25%;">Purpose</th>
+            <th style="width:25%;">Make</th>
+            <th style="width:25%;">M.R.P</th>
+        </tr>
+        <tr>
+            <td> Jatin </td>
+            <td> xyz </td>
+            <td> 88888 </td>
+        </tr>
+        <tr>
+            <td> Bholi </td>
+            <td> sadd </td>
+            <td> 654646 </td>
+        </tr>
+        <tr>
+            <td> Anant </td>
+            <td> sgfd </td>
+            <td> 89963 </td>
+        </tr>
+        <tr>
+            <td> Yuvraj </td>
+            <td> asds </td>
+            <td> 645646 </td>
+        </tr>
+        <tr>
+            <td> Bh </td>
+            <td> sadd </td>
+            <td> 654646 </td>
+        </tr>
+        <tr>
+            <td> Bhi </td>
+            <td> sadd </td>
+            <td> 65 </td>
+        </tr>
+        <tr>
+            <td> ds </td>
+            <td> sadd </td>
+            <td> 654646 </td>
+        </tr>
+    </table>
+    <script>
+        function searchFun(){
+            
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr=myTable.getElementsByTagName('tr');
+            console.log('yo');
+            for(var i=0;i<tr.length;i++){
+                let td= tr[i].getElementsByTagName('td')[0];
+                console.log('yo');
+                if(td){
+                    let textvalue=td.textContent||td.innerHTML;
+                    if(textvalue.toUpperCase().indexOf(filter)>-1){
+                        tr[i].style.display="";
+                    }else{
+                        tr[i].style.display="none";    
+                    }
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>

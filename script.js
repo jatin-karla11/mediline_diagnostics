@@ -38,7 +38,7 @@ function exitFunction(){
   var t=confirm("Do you really want to exit?");
   if(t==true)
   {
-    alert("Have a nice day!");
+    alert("Have a nice day "+text+"!");
   }
   else{
     var link=document.getElementById("exitbtn");
