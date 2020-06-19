@@ -162,19 +162,35 @@ h1 {
 </style>
 <style>
   .zoom {
-    padding: 20px;
-    background-color: whitesmoke;
+    padding: 10px;
+    background-color: azure;
     transition: transform .5s; /* Animation */
     width: 700px;
     height: 100px;
     margin: 0 auto;
     border-radius: 1rem;
-    opacity: 0.5;
+    opacity: 1;
+  }
+  #hui{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -12px;
+  }
+  #hu{
+    font-weight: bold;
+    font-size: large;
   }
   @media screen and (max-width:768px){
     .zoom{
-      height: 50px;
+      height: 75px;
       width: 300px;
+      padding: 5px;
+    }
+    #hui{
+      font-size: 12px;
+    }
+    #hu{
+      font-size: 15px;
     }
   }
   .zoom:hover {
@@ -393,15 +409,18 @@ h1 {
   <br>
   <br>
   <div class="zoom">
-    <strong>News Update</strong>
+    <p id="hu">Update:</p>
+    <p id="hui">Detailed information of products is available on both products and associates..</p>
   </div>
   <br>
   <div class="zoom">
-    <strong>Update</strong>
+    <p id="hu">Update:</p>
+    <p id="hui">Detailed information of products is available on both products and associates..</p>
   </div>
   <br>
   <div class="zoom">
-  <strong>Update</strong>
+    <p id="hu">Update:</p>
+    <p id="hui">Detailed information of products is available on both products and associates..</p>
   </div>
 </div>
 </div>
