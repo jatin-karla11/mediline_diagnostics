@@ -1,0 +1,32 @@
+[
+	{
+		"abbr": "RD",
+		"name": "Glucose",
+		"packsize": "32.361538"
+	},
+	{
+		"abbr": "RD",
+		"name": "G6-PDH",
+		"packsize": "58.301935"
+	},
+		{
+		"abbr": "WB",
+		"name": "TSH",
+		"packsize": "33.448457"
+	},
+	{
+		"abbr": "WB",
+		"name": "Yellow Tips",
+		"packsize": "41.145548"
+	},
+	{
+		"abbr": "WB",
+		"name": "xyz",
+		"packsize": "41.145548"
+	},
+	{
+		"abbr": "Biolab",
+		"name": "Field-Stain",
+		"packsize": "41.145548"
+	}
+]
