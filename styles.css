@@ -29,13 +29,13 @@
 }
 .contain{
   margin: -32px 0px;
-  background-color: slategray;
+  background-color: red;
   height: 60px;
   opacity: 1;
   width: 100vw;
 }
  .btn{
-   background-color: slategray;
+   background-color: red;
    
  } 
   nav li {
