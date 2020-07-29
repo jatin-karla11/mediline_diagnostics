@@ -96,7 +96,7 @@
 }
 .tabfun{
   background-color: whitesmoke;
-  height: 860px;
+  height: 950px;
   margin-top:-40px;
   width: 100vw;
 }
@@ -147,12 +147,12 @@
 }
 #abt1{
   background-color: black;
-  height: 400px;
-  width: 400px;
+  height: 480px;
+  width: 500px;
 }
 #abt2{
   background-color: lightsteelblue;
-  height: 400px;
+  height: 480px;
   width: 400px;
   margin-left: 20px;
   padding: 15px;
@@ -196,8 +196,15 @@
   text-align: justify;
   font-weight: 580;
 }
+#carouselExampleIndi{
+  height: 460px;
+}
 @media screen and (max-width:768px) and (orientation:portrait)
 {
+  .tabfun{
+    height: 880px;
+  }
+  
   .navbar-light{
     background:  lightblue;
     
@@ -249,8 +256,8 @@
   }
   #abt1{
     background-color: black;
-    height: 180px;
-    
+    height: 250px;
+    padding: 5px;
   }
   #abt2{
     background-color: lightsteelblue;
@@ -261,8 +268,8 @@
     margin-bottom: 20px;
   }
   #carouselExampleIndi{
-    height: 173px;
-    width: 306px;
+    height: 240px;
+    width: 315px;
     padding: 1px;
   }
   body{
