@@ -198,6 +198,16 @@
 }
 @media screen and (max-width:768px) and (orientation:portrait)
 {
+  .navbar-light{
+    background:  lightblue;
+    
+  }
+  .contain{
+    background-color: lightblue;
+  }
+  .btn{
+    background-color: lightblue;
+  }
   #abt2{
     padding: 5px;
   }
