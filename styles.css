@@ -22,7 +22,7 @@
   border: solid 2px gray ;
 }
 .hi {
-  color: whitesmoke;
+  color: white;
   text-align: center;
   padding: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -333,12 +333,26 @@
     padding: 10px;
   }
   .contain{
-    height: 45px;
+    height: 35px;
     
   }
   .navbar{
     z-index: 50;
+    /* height: 30px; */
+    
   }
+  .navbar-toggler{
+    /* margin-top:-5px; */
+    margin-left:-8px;
+    height: 30px;    
+  }
+  .navbar-toggler-icon{
+    margin-top:-5px;
+  }
+  /* #jk{
+    margin-top:-5px;
+  } */
+  
   .footcontain{
     height: 700px;
     margin-top: 0px;
