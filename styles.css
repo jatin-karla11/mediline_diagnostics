@@ -199,8 +199,22 @@
 #carouselExampleIndi{
   height: 460px;
 }
+#dadquote{
+  font-size: x-large;
+  
+}
+/* #bho1{
+  align-content: center;
+} */
 @media screen and (max-width:768px) and (orientation:portrait)
 {
+  /* .media-body{
+    width: 20px;
+  } */
+  #dadquote{
+    font-size: x-small;
+    font-weight: bold;
+  }
   .tabfun{
     height: 880px;
   }
@@ -402,8 +416,13 @@
   width:120px;
 }
 .media-body{
-  width: 280px;
+  padding: 6px;
   border: 2px solid black;
+  
+}
+#bho{
+  align-items: center;
+  
 }
 .media-body h6{
   font-size: 13px;
