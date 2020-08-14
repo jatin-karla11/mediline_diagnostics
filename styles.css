@@ -211,6 +211,15 @@
   /* .media-body{
     width: 20px;
   } */
+  #yo1 h4{
+    font-size: 14px;
+  }
+  #yo2 h4{
+    font-size: 14px;
+  }
+  #yo3 h4{
+    font-size: 14px;
+  }
   #dadquote{
     font-size: x-small;
     font-weight: bold;
